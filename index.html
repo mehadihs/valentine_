@@ -12,46 +12,29 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    height:100vh;
-    overflow:hidden;
+    background:black;
     color:white;
-    text-align:center;
-    background:url("disha.jpeg") center/cover no-repeat fixed;
+    overflow:hidden;
 }
 
-/* Dark overlay */
-body::before{
-    content:"";
+/* ---------- INTRO ---------- */
+.intro{
     position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:rgba(0,0,0,0.75);
-    z-index:-1;
-}
-
-.container{
-    position:relative;
+    width:100%;
     height:100vh;
+    background:black;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    padding:20px;
-}
-
-/* Intro */
-.intro{
+    text-align:center;
+    z-index:10;
     animation:fadeIn 2s ease forwards;
 }
 
-h1{
-    font-size:45px;
-    color:#ffcc00;
-}
-
-.sub{
-    margin-top:15px;
-    font-size:18px;
+.intro h1{
+    font-size:40px;
+    margin-bottom:10px;
 }
 
 @keyframes fadeIn{
@@ -59,18 +42,56 @@ h1{
     to{opacity:1;}
 }
 
-/* Question */
-.question{
+/* ---------- HERO ---------- */
+.hero{
     display:none;
-    margin-top:40px;
+    position:relative;
+    width:100%;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url("disha.jpeg") center center no-repeat;
+    background-size:cover;
+    filter:brightness(0.5);
+    z-index:-1;
+}
+
+.hero-content{
+    max-width:700px;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:45px;
+    color:#ffcc00;
+}
+
+.hero-content p{
+    margin-top:15px;
+    line-height:1.7;
+}
+
+/* ---------- QUESTION ---------- */
+.question{
+    margin-top:30px;
+    display:none;
 }
 
 button{
-    padding:15px 35px;
+    padding:14px 35px;
     border:none;
     border-radius:40px;
     font-size:18px;
-    margin:20px;
+    margin:15px;
     cursor:pointer;
     transition:0.3s;
 }
@@ -81,108 +102,127 @@ button{
     font-weight:bold;
 }
 
+#yes:hover{
+    transform:scale(1.1);
+}
+
 #no{
     background:white;
     color:black;
     position:absolute;
 }
 
-/* Celebration */
+/* ---------- CELEBRATION ---------- */
 .celebration{
     position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
     pointer-events:none;
     overflow:hidden;
 }
 
 .particle{
     position:absolute;
-    font-size:30px;
+    font-size:28px;
     animation:explode 3s linear forwards;
 }
 
 @keyframes explode{
     0%{transform:translateY(0) scale(1);opacity:1;}
-    100%{transform:translateY(-800px) scale(2);opacity:0;}
+    100%{transform:translateY(-900px) scale(2);opacity:0;}
 }
 
-/* Letter */
+/* ---------- LETTER ---------- */
 .letter{
     display:none;
-    position:absolute;
-    top:0;
+    position:fixed;
     width:100%;
-    height:100%;
-    overflow-y:auto;
+    height:100vh;
+    background:black;
     padding:100px 20px;
+    overflow-y:auto;
     font-family:'Noto Serif Bengali',serif;
     line-height:1.9;
     font-size:20px;
-    background:rgba(0,0,0,0.85);
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<div class="intro">
+<!-- INTRO SCREEN -->
+<div class="intro" id="intro">
     <h1>Disha 💛</h1>
-    <div class="sub">
-        Since 13th January 2026<br><br>
-        I saw you for the first time at Mahindra.<br>
-        I was amazed by your eye color… the way you look.<br>
+    <h2>Since 13th January 2026...</h2>
+    <h2>Mehadi's forever choice...</h2>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+    <div class="hero-content">
+        <h1>Disha 💛</h1>
+        <p>Since 13th January 2026</p>
+
+        <p>
+        On 13th January 2026, I saw you for the first time at Mahindra.<br>
+        I was completely amazed by your eye color and the way you look.<br>
         24th January — your first hug felt heavenly peaceful.<br>
         29th January — the first time you sat on my lap… unforgettable.
+        </p>
+
+        <div class="question" id="question">
+            <h2>Will you stay with Mehadi forever? 💛</h2>
+            <button id="yes">Yes 💛</button>
+            <button id="no">No 🙈</button>
+        </div>
     </div>
-</div>
-
-<div class="question" id="question">
-    <h2>Will you stay with me forever? 💛</h2>
-    <button id="yes">Yes 💛</button>
-    <button id="no">No 🙈</button>
-</div>
-
 </div>
 
 <div class="celebration" id="celebration"></div>
 
+<!-- LETTER -->
 <div class="letter" id="letter">
-    <h2 style="color:#ffcc00;">তোমার জন্য আমার কথা 💛</h2><br>
+<h2 style="color:#ffcc00;">তোমার জন্য আমার কথা 💛</h2><br>
 
-    প্রিয় দিশা,<br><br>
+প্রিয় দিশা,<br><br>
 
-    ১৩ই জানুয়ারি ২০২৬ যেদিন তোমাকে প্রথম দেখি,
-    সেদিন থেকেই আমার পৃথিবী বদলে যায়।<br><br>
+১৩ই জানুয়ারি ২০২৬ যেদিন তোমাকে প্রথম দেখি,
+সেদিন থেকেই আমার পৃথিবী বদলে যায়।<br><br>
 
-    তোমার চোখের রঙ, তোমার হাসি,
-    তোমার উপস্থিতি — সবকিছু যেন অন্যরকম।<br><br>
+তোমার চোখের রঙ, তোমার হাসি —
+সবকিছু যেন অন্যরকম।<br><br>
 
-    ২৪শে জানুয়ারির সেই প্রথম আলিঙ্গন —
-    মনে হয়েছিল স্বর্গের শান্তি পেয়েছি।<br><br>
+২৪শে জানুয়ারির সেই প্রথম আলিঙ্গন —
+মনে হয়েছিল স্বর্গের শান্তি পেয়েছি।<br><br>
 
-    ২৯শে জানুয়ারির সেই মুহূর্ত —
-    যখন তুমি প্রথম আমার কোলে বসেছিলে —
-    সেই মুহূর্ত আমার জীবনের স্মৃতির পাতায় চিরদিন থাকবে।<br><br>
+২৯শে জানুয়ারির সেই মুহূর্ত —
+যখন তুমি প্রথম আমার কোলে বসেছিলে —
+সেই মুহূর্ত চিরকাল আমার হৃদয়ে থাকবে।<br><br>
 
-    আমি শুধু আজ নয়,
-    আমি চিরকাল তোমাকেই চাই। 💛<br><br>
+আমি শুধু আজ নয়,
+আমি চিরকাল তোমাকেই চাই। 💛<br><br>
 
-    — তোমার
+ভালোবাসা রইলো,<br>
+তোমার মেহাদি 💛
 </div>
 
 <script>
 
-/* Show question after 3 seconds */
+/* Intro → Hero */
+setTimeout(()=>{
+    document.getElementById("intro").style.display="none";
+    document.getElementById("hero").style.display="flex";
+},4000);
+
+/* Show question */
 setTimeout(()=>{
     document.getElementById("question").style.display="block";
-},3000);
+},7000);
 
-/* Move NO button properly */
+/* Move NO button */
 const noBtn=document.getElementById("no");
-
 noBtn.addEventListener("mouseover",()=>{
     const maxX=window.innerWidth-100;
     const maxY=window.innerHeight-100;
@@ -190,32 +230,26 @@ noBtn.addEventListener("mouseover",()=>{
     noBtn.style.top=Math.random()*maxY+"px";
 });
 
-/* YES explosion */
+/* YES click explosion */
 document.getElementById("yes").addEventListener("click",()=>{
-
     const celebration=document.getElementById("celebration");
 
-    for(let i=0;i<150;i++){
+    for(let i=0;i<200;i++){
         const p=document.createElement("div");
         p.classList.add("particle");
-
         const emojis=["💛","🌼","🎈"];
         p.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
-
         p.style.left=Math.random()*100+"%";
         p.style.top="80%";
-
         celebration.appendChild(p);
-
         setTimeout(()=>{p.remove();},3000);
     }
 
     setTimeout(()=>{
+        document.getElementById("hero").style.display="none";
         document.getElementById("letter").style.display="block";
-    },1500);
-
+    },2000);
 });
-
 </script>
 
 </body>
