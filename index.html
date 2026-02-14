@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Disha 💛</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -14,44 +14,45 @@ body{
     font-family:'Poppins',sans-serif;
     background:black;
     color:white;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
-/* ---------- INTRO ---------- */
+/* INTRO */
 .intro{
-    position:fixed;
-    width:100%;
     height:100vh;
-    background:black;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+    flex-direction:column;
     text-align:center;
-    z-index:10;
     animation:fadeIn 2s ease forwards;
 }
 
 .intro h1{
-    font-size:40px;
-    margin-bottom:10px;
+    font-size:3rem;
+    color:#ffd700;
+}
+
+.intro p{
+    margin-top:15px;
+    font-size:1.3rem;
 }
 
 @keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
+    from{opacity:0}
+    to{opacity:1}
 }
 
-/* ---------- HERO ---------- */
+/* HERO */
 .hero{
     display:none;
-    position:relative;
-    width:100%;
     height:100vh;
-    justify-content:center;
+    position:relative;
+    display:flex;
     align-items:center;
+    justify-content:center;
     text-align:center;
-    overflow:hidden;
+    padding:20px;
 }
 
 .hero::before{
@@ -59,197 +60,195 @@ body{
     position:absolute;
     width:100%;
     height:100%;
-    background:url("disha.jpeg") center center no-repeat;
+    background:url("disha.jpeg") center 30% no-repeat;
     background-size:cover;
-    filter:brightness(0.5);
+    filter:brightness(0.45);
     z-index:-1;
 }
 
 .hero-content{
-    max-width:700px;
-    padding:20px;
+    max-width:600px;
 }
 
-.hero-content h1{
-    font-size:45px;
-    color:#ffcc00;
+.hero h2{
+    font-size:2.5rem;
+    color:#ffd700;
 }
 
-.hero-content p{
-    margin-top:15px;
-    line-height:1.7;
+.hero p{
+    margin:15px 0;
 }
 
-/* ---------- QUESTION ---------- */
-.question{
-    margin-top:30px;
-    display:none;
+.buttons{
+    margin-top:25px;
 }
 
 button{
-    padding:14px 35px;
+    padding:12px 30px;
     border:none;
-    border-radius:40px;
-    font-size:18px;
-    margin:15px;
+    border-radius:30px;
+    font-size:16px;
     cursor:pointer;
+    margin:10px;
     transition:0.3s;
 }
 
-#yes{
-    background:#ffcc00;
+.yes{
+    background:#ffd700;
     color:black;
-    font-weight:bold;
 }
 
-#yes:hover{
-    transform:scale(1.1);
-}
-
-#no{
+.no{
     background:white;
     color:black;
-    position:absolute;
+    position:relative;
 }
 
-/* ---------- CELEBRATION ---------- */
-.celebration{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-.particle{
-    position:absolute;
-    font-size:28px;
-    animation:explode 3s linear forwards;
-}
-
-@keyframes explode{
-    0%{transform:translateY(0) scale(1);opacity:1;}
-    100%{transform:translateY(-900px) scale(2);opacity:0;}
-}
-
-/* ---------- LETTER ---------- */
+/* LETTER */
 .letter{
     display:none;
-    position:fixed;
-    width:100%;
-    height:100vh;
+    padding:60px 20px;
     background:black;
-    padding:100px 20px;
-    overflow-y:auto;
-    font-family:'Noto Serif Bengali',serif;
-    line-height:1.9;
-    font-size:20px;
+    text-align:center;
+    font-family:'Noto Serif Bengali', serif;
 }
+
+.letter h2{
+    color:#ff4da6;
+    margin-bottom:30px;
+}
+
+/* ANIMATIONS */
+.explode{
+    position:fixed;
+    font-size:24px;
+    animation:fly 2s linear forwards;
+}
+
+@keyframes fly{
+    0%{transform:translateY(0) scale(1);opacity:1;}
+    100%{transform:translateY(-600px) scale(1.5);opacity:0;}
+}
+
+.balloon{
+    position:fixed;
+    font-size:30px;
+    animation:balloonUp 4s linear forwards;
+}
+
+@keyframes balloonUp{
+    0%{transform:translateY(100vh);}
+    100%{transform:translateY(-100vh);}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- INTRO SCREEN -->
-<div class="intro" id="intro">
+<!-- INTRO -->
+<section class="intro" id="intro">
     <h1>Disha 💛</h1>
-    <h2>Since 13th January 2026...</h2>
-    <h2>Mehadi's forever choice...</h2>
-</div>
+    <p>Since 13th January 2026</p>
+</section>
 
 <!-- HERO -->
-<div class="hero" id="hero">
-    <div class="hero-content">
-        <h1>Disha 💛</h1>
-        <p>Since 13th January 2026</p>
+<section class="hero" id="hero">
+<div class="hero-content">
+    <h2>Disha 💛</h2>
+    <p>On 13th January 2026, I saw you for the first time at Mahindra.</p>
+    <p>I was completely amazed by your eye color and the way you look.</p>
+    <p>24th January — your first hug felt heavenly peaceful.</p>
+    <p>29th January — the first time you sat on my lap... unforgettable.</p>
 
-        <p>
-        On 13th January 2026, I saw you for the first time at Mahindra.<br>
-        I was completely amazed by your eye color and the way you look.<br>
-        24th January — your first hug felt heavenly peaceful.<br>
-        29th January — the first time you sat on my lap… unforgettable.
-        </p>
+    <h3 style="margin-top:20px;">Will you stay with Mehadi forever? 💛</h3>
 
-        <div class="question" id="question">
-            <h2>Will you stay with Mehadi forever? 💛</h2>
-            <button id="yes">Yes 💛</button>
-            <button id="no">No 🙈</button>
-        </div>
+    <div class="buttons">
+        <button class="yes" onclick="sayYes()">Yes 💛</button>
+        <button class="no" id="noBtn">No 🙈</button>
     </div>
 </div>
-
-<div class="celebration" id="celebration"></div>
+</section>
 
 <!-- LETTER -->
-<div class="letter" id="letter">
-<h2 style="color:#ffcc00;">তোমার জন্য আমার কথা 💛</h2><br>
+<section class="letter" id="letter">
+    <h2>তোমার জন্য আমার কথা 💌</h2>
 
-প্রিয় দিশা,<br><br>
+    <p>প্রিয় দিশা,</p><br>
 
-১৩ই জানুয়ারি ২০২৬ যেদিন তোমাকে প্রথম দেখি,
-সেদিন থেকেই আমার পৃথিবী বদলে যায়।<br><br>
+    <p>
+    ২০২৬ সালের ১৩ই জানুয়ারি যখন প্রথম তোমাকে দেখলাম,  
+    তখনই বুঝেছিলাম তুমি আমার জীবনে বিশেষ কেউ হতে চলেছ।
+    </p><br>
 
-তোমার চোখের রঙ, তোমার হাসি —
-সবকিছু যেন অন্যরকম।<br><br>
+    <p>
+    ২৪শে জানুয়ারির সেই প্রথম আলিঙ্গন,  
+    আর ২৯শে জানুয়ারির সেই মুহূর্ত —  
+    যখন তুমি প্রথম আমার কোলে বসেছিলে...  
+    সেই স্মৃতিগুলো আমার হৃদয়ে চিরদিনের জন্য গেঁথে আছে।
+    </p><br>
 
-২৪শে জানুয়ারির সেই প্রথম আলিঙ্গন —
-মনে হয়েছিল স্বর্গের শান্তি পেয়েছি।<br><br>
+    <p>
+    তুমি শুধু আমার ভালোবাসা নও,  
+    তুমি আমার শান্তি, আমার ভরসা,  
+    আমার আজ আর আমার আগামীকাল।
+    </p><br>
 
-২৯শে জানুয়ারির সেই মুহূর্ত —
-যখন তুমি প্রথম আমার কোলে বসেছিলে —
-সেই মুহূর্ত চিরকাল আমার হৃদয়ে থাকবে।<br><br>
+    <p>
+    আমি শুধু আজ নয়, সারাজীবন তোমাকেই চাই।
+    </p><br>
 
-আমি শুধু আজ নয়,
-আমি চিরকাল তোমাকেই চাই। 💛<br><br>
-
-ভালোবাসা রইলো,<br>
-তোমার মেহাদি 💛
-</div>
+    <p>ভালোবাসি তোমায়, দিশা 💛</p><br>
+    <p>— তোমার, মেহেদী</p>
+</section>
 
 <script>
 
-/* Intro → Hero */
+/* SHOW HERO AFTER 3 SECONDS */
 setTimeout(()=>{
     document.getElementById("intro").style.display="none";
     document.getElementById("hero").style.display="flex";
-},4000);
+},3000);
 
-/* Show question */
-setTimeout(()=>{
-    document.getElementById("question").style.display="block";
-},7000);
+/* NO BUTTON RUN */
+const noBtn=document.getElementById("noBtn");
 
-/* Move NO button */
-const noBtn=document.getElementById("no");
 noBtn.addEventListener("mouseover",()=>{
-    const maxX=window.innerWidth-100;
-    const maxY=window.innerHeight-100;
-    noBtn.style.left=Math.random()*maxX+"px";
-    noBtn.style.top=Math.random()*maxY+"px";
+    const x=Math.random()*window.innerWidth-100;
+    const y=Math.random()*window.innerHeight-100;
+    noBtn.style.position="absolute";
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
 });
 
-/* YES click explosion */
-document.getElementById("yes").addEventListener("click",()=>{
-    const celebration=document.getElementById("celebration");
+/* YES CLICK */
+function sayYes(){
 
-    for(let i=0;i<200;i++){
-        const p=document.createElement("div");
-        p.classList.add("particle");
-        const emojis=["💛","🌼","🎈"];
-        p.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
-        p.style.left=Math.random()*100+"%";
-        p.style.top="80%";
-        celebration.appendChild(p);
-        setTimeout(()=>{p.remove();},3000);
+    // Explosion
+    for(let i=0;i<50;i++){
+        let el=document.createElement("div");
+        el.className="explode";
+        el.style.left=Math.random()*100+"vw";
+        el.style.top=Math.random()*100+"vh";
+        el.innerHTML=Math.random()>0.5?"💛":"🌼";
+        document.body.appendChild(el);
+        setTimeout(()=>el.remove(),2000);
     }
 
-    setTimeout(()=>{
-        document.getElementById("hero").style.display="none";
-        document.getElementById("letter").style.display="block";
-    },2000);
-});
+    // Balloons
+    for(let i=0;i<20;i++){
+        let b=document.createElement("div");
+        b.className="balloon";
+        b.style.left=Math.random()*100+"vw";
+        b.innerHTML="🎈";
+        document.body.appendChild(b);
+        setTimeout(()=>b.remove(),4000);
+    }
+
+    document.getElementById("hero").style.display="none";
+    document.getElementById("letter").style.display="block";
+}
+
 </script>
 
 </body>
