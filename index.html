@@ -1,1 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Disha 💛</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:black;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* INTRO */
+.intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-size:28px;
+font-weight:600;
+z-index:999;
+animation:fadeOut 4s forwards;
+animation-delay:4s;
+}
+
+@keyframes fadeOut{
+to{opacity:0;visibility:hidden;}
+}
+
+/* HERO */
+.hero{
+min-height:100vh;
+background:linear-gradient(135deg,#111,#222,#111);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+h1{
+font-family:'Great Vibes',cursive;
+font-size:65px;
+color:#ffcc00;
+}
+
+button{
+margin:15px;
+padding:15px 40px;
+border:none;
+border-radius:40px;
+font-size:20px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.yes{
+background:#ffcc00;
+color:black;
+}
+
+.no{
+background:white;
+color:black;
+position:relative;
+}
+
+/* LETTER */
+.letter{
+display:none;
+padding:60px 20px;
+background:#111;
+line-height:1.8;
+font-size:19px;
+}
+
+/* EXPLOSION */
+.explosion{
+position:fixed;
+pointer-events:none;
+animation:burst 3s ease-out forwards;
+}
+
+@keyframes burst{
+0%{transform:scale(0);opacity:1;}
+100%{transform:translate(var(--x), var(--y)) scale(1.8);opacity:0;}
+}
+
+/* BALLOONS */
+.balloon{
+position:fixed;
+bottom:-100px;
+font-size:40px;
+animation:fly 6s linear forwards;
+}
+
+@keyframes fly{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="intro">
+Disha 💛 <br>
+13th January 2026 — Mahindra <br>
+24th January — The first hug 🤍 <br>
+29th January — The first time you sat on my lap
+</div>
+
+<div class="hero">
+<h1>Will You Be Mine Forever? ✨</h1>
+
+<div>
+<button class="yes" onclick="sayYes()">Yes 💍</button>
+<button class="no" id="noBtn">No 😜</button>
+</div>
+</div>
+
+<div class="letter" id="letter">
+<h2 style="color:#ffcc00;">For You, Disha 💌</h2>
+
+<p>
+13th January 2026 —
+The first time I saw you at Mahindra.
+I was amazed by your eye color.
+The way you looked…
+It felt like the world paused for a second.
+</p>
+
+<p>
+24th January —
+When you hugged me for the first time,
+it felt heavenly.
+Peaceful.
+Like everything was exactly where it was supposed to be.
+</p>
+
+<p>
+29th January —
+The first time you sat on my lap.
+That moment wasn’t just physical closeness.
+It was comfort.
+It was trust.
+It was something I’ll never forget.
+</p>
+
+<p>
+Every date with you is becoming a memory
+I want to keep forever.
+</p>
+
+<p>
+If you allow me,
+I want to create many more dates with you.
+Not just days…
+but a lifetime.
+</p>
+
+<p style="margin-top:20px; font-weight:bold;">
+— From someone who still remembers every detail 💛
+</p>
+</div>
+
+<script>
+
+// CELEBRATION
+function sayYes(){
+
+// Explosions
+for(let i=0;i<120;i++){
+createExplosion("💖");
+createExplosion("🌹");
+}
+
+// Balloons
+for(let i=0;i<40;i++){
+createBalloon();
+}
+
+// Show letter
+setTimeout(()=>{
+document.getElementById("letter").style.display="block";
+window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+},2000);
+}
+
+function createExplosion(emoji){
+let el=document.createElement("div");
+el.className="explosion";
+el.innerHTML=emoji;
+
+let angle=Math.random()*2*Math.PI;
+let distance=Math.random()*600+100;
+
+let x=Math.cos(angle)*distance+"px";
+let y=Math.sin(angle)*distance+"px";
+
+el.style.left=window.innerWidth/2+"px";
+el.style.top=window.innerHeight/2+"px";
+el.style.setProperty("--x",x);
+el.style.setProperty("--y",y);
+el.style.fontSize=(Math.random()*40+20)+"px";
+
+document.body.appendChild(el);
+setTimeout(()=>{el.remove();},3000);
+}
+
+// Balloons
+function createBalloon(){
+let balloon=document.createElement("div");
+balloon.className="balloon";
+balloon.innerHTML=["🎈","🎉","🎊"][Math.floor(Math.random()*3)];
+balloon.style.left=Math.random()*100+"%";
+document.body.appendChild(balloon);
+setTimeout(()=>{balloon.remove();},6000);
+}
+
+// Escape NO button
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseenter",()=>{
+let x=Math.random()*(window.innerWidth-100);
+let y=Math.random()*(window.innerHeight-50);
+noBtn.style.position="fixed";
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+});
+
+</script>
+
+</body>
+</html>
 
