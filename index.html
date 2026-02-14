@@ -3,45 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disha ❤️</title>
+<title>For My Disha 💛</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Great+Vibes&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 font-family:'Poppins',sans-serif;
 background:black;
 color:white;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 /* INTRO */
 .intro{
+position:fixed;
+width:100%;
 height:100vh;
+background:black;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:black;
-padding:20px;
-animation:fadeOut 1s ease 3s forwards;
-}
-
-.intro h1{
-font-size:32px;
-}
-
-.intro p{
-margin-top:10px;
-font-size:18px;
-opacity:0.8;
+font-size:28px;
+font-weight:600;
+z-index:999;
+animation:fadeOut 4s forwards;
+animation-delay:4s;
 }
 
 @keyframes fadeOut{
@@ -50,73 +40,47 @@ to{opacity:0;visibility:hidden;}
 
 /* HERO */
 .hero{
-display:none;
-height:100vh;
-position:relative;
+min-height:100vh;
+background:url('disha.jpeg') center/cover no-repeat;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
+position:relative;
 text-align:center;
-padding:20px;
 }
 
 .hero::before{
 content:"";
 position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:url("disha.jpeg") center center no-repeat;
-background-size:cover;
-filter:brightness(0.55);
-z-index:-1;
+inset:0;
+background:rgba(0,0,0,0.6);
 }
 
-.hero-content{
-max-width:600px;
+.hero > *{
+position:relative;
+z-index:2;
 }
 
-.hero h1{
-font-size:36px;
-color:#FFD700;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:16px;
-margin:6px 0;
-}
-
-.question{
-margin-top:25px;
-font-size:20px;
-font-weight:600;
-}
-
-.buttons{
-margin-top:20px;
-display:flex;
-gap:15px;
-justify-content:center;
+h1{
+font-family:'Great Vibes',cursive;
+font-size:65px;
+color:#ffcc00;
 }
 
 button{
-padding:12px 28px;
+margin:15px;
+padding:15px 40px;
 border:none;
-border-radius:30px;
-font-size:16px;
+border-radius:40px;
+font-size:20px;
 cursor:pointer;
-transition:0.3s;
+transition:0.2s;
 }
 
 .yes{
-background:#FFD700;
+background:#ffcc00;
 color:black;
-}
-
-.yes:hover{
-transform:scale(1.1);
 }
 
 .no{
@@ -129,154 +93,188 @@ position:relative;
 .letter{
 display:none;
 padding:60px 20px;
-background:black;
+background:#111;
 font-family:'Noto Serif Bengali',serif;
+font-size:19px;
 line-height:1.8;
-max-width:700px;
-margin:auto;
-animation:fadeIn 2s ease forwards;
 }
 
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-/* Explosion items */
+/* EXPLOSION ELEMENTS */
 .explosion{
 position:fixed;
-font-size:24px;
-animation:explode 2s linear forwards;
 pointer-events:none;
+animation:burst 3s ease-out forwards;
 }
 
-@keyframes explode{
-0%{transform:translateY(0) scale(1);opacity:1;}
-100%{transform:translateY(-600px) scale(1.5);opacity:0;}
+@keyframes burst{
+0%{transform:scale(0);opacity:1;}
+100%{transform:translate(var(--x), var(--y)) scale(1.8);opacity:0;}
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.hero h1{
-font-size:28px;
-}
-.hero p{
-font-size:14px;
-}
-.question{
-font-size:18px;
-}
+/* BALLOONS */
+.balloon{
+position:fixed;
+bottom:-100px;
+font-size:40px;
+animation:fly 6s linear forwards;
 }
 
+@keyframes fly{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* SCREEN SHAKE */
+.shake{
+animation:shakeScreen 0.4s infinite;
+}
+
+@keyframes shakeScreen{
+0%{transform:translate(2px,2px);}
+25%{transform:translate(-2px,-2px);}
+50%{transform:translate(2px,-2px);}
+75%{transform:translate(-2px,2px);}
+100%{transform:translate(0,0);}
+}
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div class="intro" id="intro">
-<h1>Disha 💛</h1>
-<p>Since 13th January 2026</p>
+<div class="intro">
+Isma Ara Disha 💛 <br>
+Since 13th January... <br>
+Forever's Mehadis... <br>
+My Disha...
 </div>
 
-<!-- HERO -->
-<div class="hero" id="hero">
-<div class="hero-content">
-<h1>Disha 💛</h1>
-<p>On 13th January 2026, I saw you for the first time at Mahindra.</p>
-<p>I was completely amazed by your eye color and the way you look.</p>
-<p>24th January — your first hug felt heavenly peaceful.</p>
-<p>29th January — the first time you sat on my lap… unforgettable.</p>
+<div class="hero">
+<h1>Will You Be Mine Forever? 🌹</h1>
 
-<div class="question">
-Will you stay with Mehadi forever? 💛
-</div>
-
-<div class="buttons">
-<button class="yes" onclick="celebrate()">Yes 💛</button>
-<button class="no" id="noBtn">No 🙈</button>
-</div>
+<div>
+<button class="yes" onclick="sayYes()">Yes 💍</button>
+<button class="no" id="noBtn">No 😜</button>
 </div>
 </div>
 
-<!-- LETTER -->
 <div class="letter" id="letter">
-<h2 style="text-align:center;color:#FFD700;margin-bottom:20px;">তোমার জন্য আমার কথা 💛</h2>
+<h2 style="color:#ffcc00;">তোমার জন্য আমার কিছু কথা 💌</h2>
 
 <p>প্রিয় দিশা,</p>
 
 <p>
-১৩ই জানুয়ারি ২০২৬ — সেদিন তোমাকে প্রথম দেখেছিলাম।
-তোমার চোখের রং, তোমার চাওয়া… সবকিছু আমাকে থমকে দিয়েছিল।
+১৩ই জানুয়ারি প্রথম তোমাকে মহিন্দ্রাতে দেখেছিলাম।
+সেদিন তোমার চোখের রং, তোমার তাকানোর ভঙ্গি —
+সবকিছু আমাকে অবাক করে দিয়েছিল।
+সেই মুহূর্তেই যেন আমার হৃদয় তোমার হয়ে গিয়েছিল।
 </p>
 
 <p>
-২৪শে জানুয়ারি — তোমার প্রথম আলিঙ্গন।
-সেই মুহূর্তটা ছিল এক অদ্ভুত শান্তি।
+২৫শে জানুয়ারি তুমি যখন প্রথম আমাকে জড়িয়ে ধরেছিলে,
+সেই অনুভূতিটা ছিল স্বর্গীয়।
+মনে হচ্ছিল পৃথিবীর সব শান্তি যেন আমার বুকের ভেতর এসে থেমে গেছে।
 </p>
 
 <p>
-২৯শে জানুয়ারি — যখন তুমি প্রথম আমার কোলে বসেছিলে,
-সেই মুহূর্তটা আমার জীবনের এক অবিস্মরণীয় স্মৃতি হয়ে থাকবে।
+২৯শে জানুয়ারি —
+যেদিন তুমি আমার কোলে বসেছিলে,
+সেটা আমার পুরো জীবনের সবচেয়ে সুন্দর স্মৃতি।
+সেই মুহূর্তটা আমি সারাজীবন ধরে রাখতে চাই।
 </p>
 
 <p>
-আমি শুধু আজ না… সারাজীবন তোমাকেই চাই।
+দিশা, তুমি শুধু আমার ভালোবাসা না,
+তুমি আমার স্বপ্ন, আমার ভবিষ্যৎ,
+আমার প্রতিটা আগামী দিনের কারণ।
 </p>
 
-<p style="margin-top:20px;">
-ভালোবাসি তোমাকে দিশা 💛
+<p>
+আমি চিরকাল তোমাকেই চাই।
+চিরকাল আমার দিশা হয়ে থেকো। 💛
 </p>
 
-<p style="margin-top:20px;">
-— তোমার, মেহেদী
-</p>
-
+<p style="font-weight:bold;">— তোমার, মেহেদী হাসান শাওন</p>
 </div>
 
 <script>
 
-// Show hero after intro
+function sayYes(){
+
+document.body.classList.add("shake");
+
+for(let i=0;i<120;i++){
+createExplosion("🌹");
+}
+
+for(let i=0;i<120;i++){
+createExplosion("💖");
+}
+
+for(let i=0;i<40;i++){
+createBalloon();
+}
+
+setTimeout(()=>{document.body.classList.remove("shake");},1500);
+
 setTimeout(()=>{
-document.getElementById("hero").style.display="flex";
-},3000);
+document.getElementById("letter").style.display="block";
+window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+},2500);
 
-// NO button moving
-const noBtn=document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover",()=>{
-const x=Math.random()*300-150;
-const y=Math.random()*200-100;
-noBtn.style.transform=`translate(${x}px,${y}px)`;
+fetch("https://formspree.io/f/mqedpvlo",{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({
+message:"Disha clicked YES 💛",
+time:new Date().toLocaleString()
+})
 });
 
-// YES button
-function celebrate(){
-
-// explosion effect
-for(let i=0;i<50;i++){
-let item=document.createElement("div");
-item.className="explosion";
-item.innerHTML=["💛","🌹","🎈"][Math.floor(Math.random()*3)];
-item.style.left=Math.random()*100+"vw";
-item.style.bottom="0";
-item.style.fontSize=(20+Math.random()*20)+"px";
-document.body.appendChild(item);
-
-setTimeout(()=>item.remove(),2000);
 }
 
-// show letter
-setTimeout(()=>{
-document.getElementById("hero").style.display="none";
-document.getElementById("letter").style.display="block";
-window.scrollTo(0,0);
-},1500);
+function createExplosion(emoji){
+let el=document.createElement("div");
+el.className="explosion";
+el.innerHTML=emoji;
 
+let angle=Math.random()*2*Math.PI;
+let distance=Math.random()*600+100;
+
+let x=Math.cos(angle)*distance+"px";
+let y=Math.sin(angle)*distance+"px";
+
+el.style.left=window.innerWidth/2+"px";
+el.style.top=window.innerHeight/2+"px";
+el.style.setProperty("--x",x);
+el.style.setProperty("--y",y);
+el.style.fontSize=(Math.random()*40+20)+"px";
+
+document.body.appendChild(el);
+
+setTimeout(()=>{el.remove();},3000);
 }
+
+function createBalloon(){
+let balloon=document.createElement("div");
+balloon.className="balloon";
+balloon.innerHTML=["🎈","🎉","🎊"][Math.floor(Math.random()*3)];
+balloon.style.left=Math.random()*100+"%";
+document.body.appendChild(balloon);
+setTimeout(()=>{balloon.remove();},6000);
+}
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter",()=>{
+let x=Math.random()*(window.innerWidth-100);
+let y=Math.random()*(window.innerHeight-50);
+
+noBtn.style.position="fixed";
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+});
 
 </script>
 
 </body>
 </html>
-
